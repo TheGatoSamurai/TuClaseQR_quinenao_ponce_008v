@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   <ion-title color="primary">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-content>
+    <ion-card>
+    <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+      <ion-list-header>
+        <ion-label class="val">Formulario Válido: {{formulario.valid}} </ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Usuario: </ion-label>
+        <ion-input type="user" placeholder="Usuario"
+                   name="user" value="" [(ngModel)]= "usuario.user"
+                   pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                   required>
+        </ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Password: </ion-label>
+        <ion-input type="password" placeholder="Contraseña"
+                   name="password" value="" [(ngModel)]= "usuario.password"
+                   required>
+        </ion-input>
+      </ion-item>
+  
+      <ion-button [disabled] ="formulario.invalid"
+              type="submit" class="btnreg" expand="block" routerLink="/avatar">
+        Iniciar Sesion
+      </ion-button>
+  
+    </form>
+    <ion-button class="btnreg" expand="block" routerLink="/register">
+      Registrar Usuario
+    </ion-button> 
+  </ion-card>
+</ion-content>

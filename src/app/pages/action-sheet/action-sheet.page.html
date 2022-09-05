@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   <ion-title color="primary">Configuracion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item lines="none">
+  <ion-icon name="sunny"></ion-icon>
+  <ion-icon name="moon"></ion-icon>
+  <ion-toggle [(ngModel)]='darkValue' [checked]="darkValue" (ionChange)="setTheme($event)"></ion-toggle>
+</ion-item>
+ <ion-card >
+  <ion-datetime presentation="date-time" [preferWheel]="true"></ion-datetime>
+ </ion-card>
+
+
+<img class="construccion" src="/assets/construc1.gif"/>
+<ion-title>Sitio en construccion</ion-title>
+</ion-content>

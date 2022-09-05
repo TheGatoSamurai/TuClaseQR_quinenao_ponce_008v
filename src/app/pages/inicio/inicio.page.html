@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   <ion-title color="primary">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img class='logo' src="assets/TuclaseQR.png" class="ion-padding">
+  <ion-toolbar>
+    <ion-title class='duoc'>de Duoc UC</ion-title>
+  </ion-toolbar>
+  <ion-card>
+    <img  src="assets/mirando.gif" class="ion-padding">
+    <ion-card-subtitle class="sub">OwO</ion-card-subtitle>
+    <ion-card-content>
+      <ion-title>¿Dudas?</ion-title>
+      Aqui tenemos la respuesta a tus inquietudes pequeño, click al boton :3
+      <ion-button type="submit" class="btnreg" expand="block" routerLink="/card">
+      Sobre Nosotros</ion-button></ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      ¿Buscas registarte? pues pulsa el Boton o inica sesion.
+      <ion-button type="submit" class="btnreg" expand="block" routerLink="/login">
+      Login </ion-button>
+      <ion-button type="submit" class="btnreg" expand="block" routerLink="/login">
+      Registarte</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+
+
