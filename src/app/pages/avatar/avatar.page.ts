@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { LoginPage } from 'src/app/users/login/login.page';
+
 
 @Component({
   selector: 'app-avatar',
@@ -7,10 +9,11 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./avatar.page.scss'],
 })
 export class AvatarPage implements OnInit {
+  LoginPage: LoginPage;
   
   constructor(private menuController: MenuController) { }
 
-  ngOnInit() {
+  ngOnInit( ) {
    
   }
 
@@ -18,4 +21,5 @@ export class AvatarPage implements OnInit {
     this.menuController.open('first');
   }
 
+  
 }

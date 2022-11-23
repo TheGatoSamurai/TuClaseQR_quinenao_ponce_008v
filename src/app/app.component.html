@@ -1,3 +1,4 @@
+
 <ion-app>
   <ion-menu contentId="main" menuId="first" side="start">
     <ion-header>
@@ -14,18 +15,21 @@
             <ion-icon [name]="c.icon" slot="start" color="mycolor"></ion-icon>
             {{ c.name }}
          </ion-item>
+         
+       
         </ion-menu-toggle>
      </ion-list>
-     
+  
+
      <ion-list id="label-list">
       <ion-list-header>
-        <ion-note>by Gerald Quiñenao</ion-note>
+        <ion-note>by Gerald Quiñenao -
+                     Catherine Ponce
+        </ion-note>
       </ion-list-header>
     </ion-list>
     </ion-content>
     
   </ion-menu>
   <ion-router-outlet id="main"></ion-router-outlet>
-
- 
 </ion-app>

@@ -9,15 +9,28 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<ion-item lines="none">
-  <ion-icon name="sunny"></ion-icon>
-  <ion-icon name="moon"></ion-icon>
-  <ion-toggle [(ngModel)]='darkValue' [checked]="darkValue" (ionChange)="setTheme($event)"></ion-toggle>
-</ion-item>
- <ion-card >
-  <ion-datetime presentation="date-time" [preferWheel]="true"></ion-datetime>
- </ion-card>
+<ion-content color= "dark">
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="3" size-lg="3" size-md="4" *ngFor = "let calendarios of calendario">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>
+          <span class="calendario.date">{{calendario.date}}</span>
+          <span class="calendario.type">{{calendario.type}}</span>
+          </ion-card-subtitle>
+        <ion-card-title>{{calendario.tittle}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>
+        {{calendario.inalienable}}
+        {{calendario.extra}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
 
 <img class="construccion" src="/assets/construc1.gif"/>

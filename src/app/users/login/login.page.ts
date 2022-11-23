@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
+import { RegistroserviceService, Usuario } from 'src/app/service/registroservice.service';
+import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -8,22 +12,64 @@ import { MenuController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  
-  constructor(private menuController: MenuController) { }
+  formularioLogin: FormGroup;
+  usuarios : Usuario[] = [];
+  menuController: any;
+
+  constructor(private alertController: AlertController, 
+              private navController: NavController,
+              private registroService: RegistroserviceService, 
+              private fb: FormBuilder) { 
+                this.formularioLogin = this.fb.group({ 
+                  'correo' : new FormControl("", Validators.required),
+                  'password' : new FormControl ("", Validators.required)                
+                })
+              }
 
   ngOnInit() {
-   
-  }
-  usuario = {
-    user:'',
-    password:''
   }
 
-  mostrarMenu(){
+  async Ingresar(){
+    var f = this.formularioLogin.value;
+    var a=0;
+    this.registroService.getUsuarios().then(datos=>{ 
+      this.usuarios = datos; 
+      if (!datos || datos.length==0){
+        return null;
+      }
+      for (let obj of this.usuarios){
+        if (f.correo == obj.correoUsuario && f.password==obj.passUsuario){
+          a=1;
+          console.log('ingresado');
+          localStorage.setItem('ingresado','true');
+          this.navController.navigateRoot('inicio');
+        }
+      }//findelfor
+      if(a==0){
+        this.alertMsg();
+      }
+    })
+  }//findelmetodo
+
+  async logout(){
+    console.log('No funcional');
+    localStorage.setItem('ingresado','false');
+    this.navController.navigateRoot('login');
+  }
+
+  async alertMsg(){
+    const alert = await this.alertController.create({
+      header: 'Error...',
+      message: 'Los datos ingresados son incorrectos',
+      buttons: ['Aceptar']
+    })
+    await alert.present();
+    return;
+  }
+
+  mostrarMenu()
+  {
     this.menuController.open('first');
   }
-  onSubmit(){
-    console.log('submit');
-    console.log(this.usuario);
-  }
+
 }

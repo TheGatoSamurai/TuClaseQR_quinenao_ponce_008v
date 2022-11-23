@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Generar QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-card-content>
+    <qrcode
+      [qrdata]="qrCodeString"
+      [width]="256"
+      [errorCorrectionLevel]="'M'">
+    </qrcode>
+  </ion-card-content>
+</ion-card>
+<ion-button (click)="starScan()" expand="block" class="ion-margin">
+  Scan QR Code
+</ion-button>
+<ion-item>
+  <ion-label clas="ion-text-wrap">Scan Result: {{scannedResult}}</ion-label>
+</ion-item>
+</ion-content>

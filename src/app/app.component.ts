@@ -26,35 +26,25 @@ export class AppComponent {
       redirecTo:'/card'
     },
     {
-      icon: 'notifications-sharp',
-      name: 'Notificaciones',
-      redirecTo: '/alert'
-    },
-    {
       icon: 'person-circle-sharp', 
       name: 'Usuario',
       redirecTo: '/avatar'
-    },   
+    }, 
+    {
+      icon: 'notifications-sharp',
+      name: 'Notificaciones',
+      redirecTo: '/alert'
+    },  
     {
       icon: 'settings-sharp',
       name: 'Configuracion',
       redirecTo: '/action-sheet'
     },
     {
-      icon: 'log-in-sharp',
-      name: 'Log-in',
-      redirecTo: '/login'
+      icon: 'qr-code-outline',
+      name: 'Generar QR',
+      redirecTo: '/generar-qr'
     },
-    {
-      icon: 'person-add-sharp',
-      name: 'Registrar',
-      redirecTo: 'register'
-    },
-    {
-      icon: 'bookmark-sharp',
-      name: 'Tab',
-      redirecTo: 'tabs'
-    }
   
   ];
 
