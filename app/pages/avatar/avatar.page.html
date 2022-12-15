@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-button (click)="mostrarMenu()" color="primary">
+      <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons><ion-avatar>
+    <img src="/assets/gatoempresario.jpg" />
+  </ion-avatar>
+    <ion-title>Usuario</ion-title>
+    
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="logout()" button ion-button block color="danger" icon-start>
+    <ion-icon name='log-out'></ion-icon>
+    Cerrar Sesion
+  </ion-button>
+</ion-content>

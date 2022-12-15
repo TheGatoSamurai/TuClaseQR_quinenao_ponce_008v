@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lectorQR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingresar a tu clase</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <icon-card>
+       <ion-button (click)="Escanear()" expand="block" fill="clear" shape="round">
+        Escanear código QR
+       </ion-button>
+      </icon-card>
+      
+    </ion-card-content>
+
+      <ion-item>
+        <ion-label class="ion text wrap"> Resultado: {{scanResult}} </ion-label>
+      </ion-item>
+     
+       <p>{{ handlerMessage }}</p>
+   </ion-card>
+
+</ion-content>

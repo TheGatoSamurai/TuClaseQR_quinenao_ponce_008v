@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   <ion-title color="primary">Configuracion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color= "dark">
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="3" size-lg="3" size-md="4" *ngFor = "let calendarios of calendario">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>
+          <span class="calendario.date">{{calendario.date}}</span>
+          <span class="calendario.type">{{calendario.type}}</span>
+          </ion-card-subtitle>
+        <ion-card-title>{{calendario.tittle}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>
+        {{calendario.inalienable}}
+        {{calendario.extra}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<img class="construccion" src="/assets/construc1.gif"/>
+<ion-title>Sitio en construccion</ion-title>
+</ion-content>

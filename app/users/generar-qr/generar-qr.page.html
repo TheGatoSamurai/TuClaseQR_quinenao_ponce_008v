@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Generar QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Genere su código QR</ion-card-title>
+    </ion-card-header>
+    
+      <ion-card class="ion-text-center">
+         <ion-card-content>
+    
+           <ion-item>
+             <ion-label position="fixed">Asignatura: </ion-label>
+             <ion-input type="text" [(ngModel)]="usuario.asign" required></ion-input>
+           </ion-item>
+
+           <ion-item>
+            <ion-label position="fixed">Fecha: </ion-label>
+            <ion-input type="date" [(ngModel)]="fecha.asign" required></ion-input>
+          </ion-item>
+
+           <ion-button 
+               expand="block" 
+               class="ion-margin" 
+               (click)="generaScan()">
+               Generar QR  
+           </ion-button>
+    
+           <qrcode 
+             [qrdata]="qrCodeString" 
+             [width]="256" 
+             [errorCorrectionLevel]="'M'">
+           </qrcode>
+         </ion-card-content>
+      </ion-card>
+
+   </ion-card>
+</ion-content>
